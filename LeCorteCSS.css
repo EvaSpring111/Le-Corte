@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDZbtPY_Q.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDXbtM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /*font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;*/
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    margin: 0px;
+    width: 1920px;
+  }
+
+  .header {
+    background-image: url(img/bgc.png);
+   /* background: #282828;*/
+    height: 900px;
+    margin-bottom: 0;
+  }
+
+  .header-address {
+    display: flex;
+    justify-content: space-between;
+
+    
+    margin-left: 405px;
+    margin-right: 405px;
+  }
+  .header-address > a {
+    margin-top: 30px;
+    display: block;
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    width: 500;
+    font-style: normal;
+    font-size: .81rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  /*.header-address > a:nth-child(2) {
+    margin-left: 801px;}*/
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+     
+      list-style: none;      
+    }
+
+    .header-links > li {
+      display: block;
+      box-sizing: border-box;
+      border: 1px solid #FFF;
+
+      padding: 13px 115px;
+      margin-top: 20px;
+    }
+
+    .header-links > li:first-child {
+      border-left: 0;
+    }
+
+    .header-links > li:last-child {
+      border-right: 0;
+    }
+
+    .header-links > li > a {   
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: .87rem;
+      line-height: 1.5;
+      text-align: center;
+      color: #FFF;
+      letter-spacing: 1px;
+
+      text-decoration: none;
+    }
+
+    .adress-second {
+      display: flex;
+      margin-left: 753px;
+      margin-top: 583px;
+      margin-bottom: 150px;
+    }
+
+    .adress-second > a {
+      display: block;
+      box-sizing: border-box;
+
+      width: 203px;
+      height: 50px;
+
+      padding: 15px 30px;
+
+      background: #99862A;
+      border-radius: 5px;
+      
+      text-align: center;
+      text-decoration: none;
+
+      color: #FFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.1rem;
+      line-height: 1.21;
+      letter-spacing: 1px;
+    }
+
+    .adress-second > a:last-child {
+      margin-left: 30px;
+    }
+    
+    .section-best-taste{
+    background: #282828;
+    height: 856px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .best-taste {
+      box-sizing: border-box;
+      border: 3px solid #C4C4C4;
+      
+      height: 656px;
+      width: 1110px;
+
+      color: #FFF;
+    }
+
+    .best-taste > h2 {
+      margin-top: 0;
+      padding-top: 60px;
+      font-family: 'Playfair Display', serif;
+      width: 700;
+      font-size: 2.25rem;      
+    }
+
+    .section-line {
+      margin-bottom: 40px;
+    }
+    
+    .best-taste > p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      width: 400;
+
+    }
+
+    .best-taste > h2,
+    .best-taste > p {
+      text-align: center;
+      line-height: 1.5;
+    }
+  
+    figure {
+      display: block;
+      text-align: center;
+    }
+
+    .section-taste-glass {
+      height: 160px;
+      width: 160px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
