@@ -262,10 +262,13 @@
       left: 43%;
     }
 
+
+    
     .Marsel_section {
       background: #E6E3C4;
       width: 100vw;
       max-width: 1920px;
+      margin-bottom: 0;
     }
 
     .line_top {
@@ -403,6 +406,11 @@
       max-width: 60vw;
     }
 
+    @media (min-width : 900px) and (max-width : 1000px) {
+      .grid_glasses {
+        display: none;
+      }
+    }
     @media screen and (max-width : 1000px) {
       .header-address,
       .header-links,
@@ -425,6 +433,7 @@
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr;
         justify-content: center;
+        display: inline-block;
       }
 
       .img_bottle-right {
@@ -438,6 +447,12 @@
 
       .link_know_more {
         margin-bottom: 30px;
+      }
+    }
+
+     @media screen and (min-width : 1000px) and (max-width : 1200px){
+      .Marsel_wine_grid{
+        display: none;
       }
     }
 
