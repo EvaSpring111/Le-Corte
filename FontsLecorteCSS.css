@@ -229,7 +229,11 @@
   font-size: .87rem;
   line-height: 1.5;
   color: #FFF;
+}
 
+.shops_links li a:hover,
+.shops_links li a:focus {
+  color: darkslategray;
 }
 
 
