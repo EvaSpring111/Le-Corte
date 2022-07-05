@@ -1,0 +1,52 @@
+.section-best-taste{
+    background: #282828;
+    height: 856px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-taste {
+    box-sizing: border-box;
+    border: 3px solid #C4C4C4;
+    
+    height: 76%; /*656px;*/
+    width: 56%; /*1110px;*/
+    
+    color: #FFF;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.best-taste > h2 {
+    margin-top: 0;
+    padding-top: 10%;   
+}
+
+.section-line {
+    margin-bottom: 3%;
+}
+
+.best-taste > p {
+    overflow: hidden;
+}
+
+.best-taste > h2,
+.best-taste > p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.best-taste picture {
+    display: block;
+    text-align: center;
+}
+
+.section-taste-glass {
+    aspect-ratio: 1;
+    
+    position: absolute;
+    bottom: 5%;
+    left: 43%;
+}

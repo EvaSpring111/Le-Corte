@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  /* latin-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  /* latin-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+  /* latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v24/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  /* latin-ext */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDZbtPY_Q.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+  /* latin */
+  @font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/playfairdisplay/v29/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiunDXbtM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  /*font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;*/
+:root {
+    font-size: 16px;
+}
+
+.header-address > a {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: .81rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.header-links > li > a {   
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: .87rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+
+.address-second > a {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.21;
+  letter-spacing: 1px;
+}
+
+.header-address a:hover,
+.header-address a:focus,
+.header-links a:hover,
+.header-links a:focus {
+  color: #c4a21b;
+}
+
+.address-second > a:hover,
+.address-second > a:focus {
+  background: #e2b810;
+  border: 2px solid #FFF;
+  color: rgb(221, 198, 182);
+}
+
+
+.best-taste > h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;      
+}
+
+.best-taste > p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.new-collections span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: black;
+}
+
+.new-collections p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: .87rem;
+  line-height: 1.5;
+  color: black;
+}
+
+.marsel_wine_grid span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: .87rem;
+  line-height: 1.5;
+  color: black;
+}
+
+.marsel_wine_grid .title_inGrid {
+  font-family: 'Playfair Display', serif;
+  font-style: solid;
+  font-size: 1.12rem;
+  color: black;
+}
+
+.link_know_more {
+  background: #998431;
+  color: white;
+}
+
+.link_know_more:hover,
+.link_know_more:focus {
+  background: #e2b810;
+  border: 2px solid #FFF;
+}
+
+.fieldset fieldset legend {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.fieldset_text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #FFF;
+  line-height: 1.5;
+}
+
+.input_color {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: .81rem;
+  line-height: 1.5;
+  color: #FFF;
+
+  background-color: #282828;
+}
+
+.button_submit {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.21;
+  color: #FFF;
+  letter-spacing: 5%;
+}
+
+.footer_links li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: .87rem;
+  line-height: 1.5;
+  color: #FFF;
+}
+
+.footer_links li a:hover,
+.footer_links li a:focus {
+  color: darkslategray;
+}
+
+.shops_links li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: .87rem;
+  line-height: 1.5;
+  color: #FFF;
+
+}
+
+
+
+
+
+
+
