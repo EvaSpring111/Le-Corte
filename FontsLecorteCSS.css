@@ -133,7 +133,8 @@
   line-height: 1.5;
 }
 
-.new-collections span {
+.new-collections span,
+.popup_text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -218,10 +219,6 @@
   color: #FFF;
 }
 
-.footer_links li a:hover,
-.footer_links li a:focus {
-  color: darkslategray;
-}
 
 .shops_links li a {
   font-family: 'Montserrat', sans-serif;
@@ -235,6 +232,11 @@
 .shops_links li a:focus {
   color: darkslategray;
 }
+.footer_links li a:hover,
+.footer_links li a:focus {
+  color: darkslategray;
+}
+
 
 
 
