@@ -78,7 +78,7 @@ body {
 .slider__slide img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 
   object-fit: cover;
 }
@@ -86,8 +86,9 @@ body {
 .slider__prev,
 .slider__next {
   position: absolute;
-  top: 5%;
+  top: 50%;
   left: 0;
+  background-color: maroon;
 
   z-index: 2;
 
@@ -133,6 +134,7 @@ body {
 
 .address-second {
   position: absolute;
+  top: 25%;;
   z-index: 10;
   display: flex;
   gap: 30px;
@@ -567,9 +569,6 @@ fieldset {
   fieldset {
     width: 40vw;
   }
-  .fieldset_title {
-    font-size: .5rem;
-  }
   .marsel_wine_grid {
     display: none;
   }
@@ -579,11 +578,8 @@ fieldset {
   }
 }
 @media (max-width : 600px) {
-  .input_color {
-    border: none;
-  }
-  .fieldset_title{
-    font-size: .2rem;
+  .address-second  a {
+    font-size: .5rem;
   }
   .header-nav {
     will-change: top, transform;
@@ -594,6 +590,9 @@ fieldset {
   .header_nav--open {
     top: 20%;
     transform: translate(-50%, -50%);
+  }
+  .input_color {
+    border: none;
   }
 }
 
@@ -621,9 +620,6 @@ fieldset {
     gap: 5px;
     align-items: center;
     padding-left: 5px;
-  }
-  .header-nav-links {
-
   }
   .shops_links li a:hover,
   .shops_links li a:focus {
@@ -671,7 +667,7 @@ fieldset {
  
   .header_nav--open {
     top: 20%;
-    transform: translate(90%, -50%);
+    transform: translate(50%, -50%);
   }
 
   .footer_nav--open {
@@ -728,6 +724,11 @@ fieldset {
     .header-nav-links
       {
       margin: 0;
+    }
+    .fieldset_title {
+      font-size: 1.4rem;
+      flex-wrap: wrap;
+      
     }
 }
 
