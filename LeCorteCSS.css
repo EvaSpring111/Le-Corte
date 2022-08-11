@@ -73,6 +73,9 @@ body {
   max-width: 1920px;
   padding: 0 0 4px;
   height: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .slider__slide img {
@@ -131,11 +134,12 @@ body {
   z-index: -1;
 }
 
-
 .address-second {
   position: absolute;
-  top: 25%;;
+  top: 2%;
+  margin: 0 auto;
   z-index: 10;
+  align-items: center;
   display: flex;
   gap: 30px;
   margin-left: 39.2% /*753px*/;
@@ -147,8 +151,7 @@ body {
   box-sizing: border-box;
   
   height: 15%;
-
-  padding: 15px 30px;
+  padding: 15px 20px;
 
   background: #99862A;
   border: 2px solid #99862A;
@@ -216,11 +219,13 @@ body {
   background: #E6E3C4;
   width: 100vw;
   max-width: 1920px;
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .line_top {
-  margin: 7% 21%;
+  margin: 7% auto;
   max-width: 60vw;
 }
 
@@ -331,7 +336,7 @@ body {
 }
 
 .line_bottom {
-  margin: 7% 21%;
+  margin: 7% auto;
   max-width: 60vw;
 }
 
@@ -562,6 +567,49 @@ fieldset {
   stroke-width: 2;
 }
 
+.popup {
+  background-color: #d3d48c;
+  width: 30vw;
+  max-width: 450px;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  display: none;
+  text-align: center;
+  z-index: 99999;
+}
+.popup h2 {
+  margin-top: 10px;
+}
+.popup button {
+  display: block;
+  margin:  0 0 20px auto;
+  background-color: transparent;
+  font-size: 30px;
+  color: #282828;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.popup__text {
+  margin: 20px 0;
+  line-height: 25px;
+}
+.popup a {
+  display: block;
+  width: fit-content;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #99862A;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
 @media (max-width : 360px) {
   .input_color {
    width: 35vw;
@@ -584,7 +632,7 @@ fieldset {
   .header-nav {
     will-change: top, transform;
     top: 0%;
-    transform: translate(-20%, -110%);
+    transform: translate(-50%, -110%);
     z-index: 999;
   }
   .header_nav--open {

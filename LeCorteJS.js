@@ -1,3 +1,17 @@
+window.addEventListener("load", function(){
+    setTimeout(
+        function open(event){
+            document.querySelector(".popup").style.display = "block";
+        },
+        1000
+    )
+});
+
+
+document.getElementById("close").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+}); 
+
 class Burger {
 
     constructor({ burgerSelector, linksSelector, linksTogglerClass, burgerTogglerClass }){
@@ -115,6 +129,8 @@ class Settings {
 } 
 
 let myForm = new Settings ('.fieldset', '.name', '.number', '.input_select');
+
+
 
 
 
