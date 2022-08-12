@@ -12,6 +12,10 @@ document.getElementById("close").addEventListener("click", function(){
     document.querySelector(".popup").style.display = "none";
 }); 
 
+document.getElementById("popupId").addEventListener("click", function(){
+    document.querySelector(".popup").style.display = "none";
+}); 
+
 class Burger {
 
     constructor({ burgerSelector, linksSelector, linksTogglerClass, burgerTogglerClass }){

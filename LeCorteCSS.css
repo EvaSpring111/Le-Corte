@@ -193,7 +193,7 @@ body {
 }
 
 .best-taste > p {
-  overflow: hidden;
+  object-fit: fill;
 }
 
 .best-taste > h2,
@@ -365,8 +365,7 @@ fieldset {
 }
 
 .fieldset_title {
-  top: 0;
-  margin-left: 25%;
+  text-align: center;
 }
 
 .grape_left {
@@ -418,13 +417,18 @@ fieldset {
   width: 70%;
   margin: 6% 20%;
   background-color: #282828;
-
+  border-radius: 5px;
+ 
   outline: none;
   border: none;
   border: 1px solid wheat;
   padding: 4% auto;
 
   transition: 0.6s ease-in;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
 }
 
 .input_color:hover,
@@ -610,12 +614,12 @@ fieldset {
   padding: 5px 10px;
 }
 
-@media (max-width : 360px) {
+@media (max-width : 380px) {
   .input_color {
-   width: 35vw;
+   width: 30vw;
   }
   fieldset {
-    width: 40vw;
+    width: 43vw;
   }
   .marsel_wine_grid {
     display: none;
@@ -623,6 +627,9 @@ fieldset {
   .fieldset_text {
     height: fit-content;
     font-size: .8rem;
+  }
+  .address-second {
+    display: none;
   }
 }
 @media (max-width : 600px) {
@@ -658,9 +665,15 @@ fieldset {
 
 /*Burger*/
 @media screen and (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .address-second {
     flex-wrap: wrap;
   }
+
   .footer_links  li,
   .shops_links li,
   .header-nav-links li {
@@ -731,8 +744,10 @@ fieldset {
       gap: 5px;
    }
 
-  .footer__burger,
-  .header__burger {
+   .header__burger {
+    display: block;
+   }
+  .footer__burger {
     display: block;
     margin-left: 50%;
   }
@@ -776,7 +791,6 @@ fieldset {
     .fieldset_title {
       font-size: 1.4rem;
       flex-wrap: wrap;
-      
     }
 }
 
