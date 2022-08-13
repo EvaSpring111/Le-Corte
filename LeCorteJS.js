@@ -1,19 +1,19 @@
-window.addEventListener("load", function(){
+window.addEventListener('load', function(){
     setTimeout(
         function open(event){
-            document.querySelector(".popup").style.display = "block";
+            document.querySelector('.popup').style.display = 'block';
         },
-        1000
+        1500
     )
 });
 
 
-document.getElementById("close").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
+document.getElementById('close').addEventListener('click', function(){
+    document.querySelector('.popup').style.display = 'none';
 }); 
 
-document.getElementById("popupId").addEventListener("click", function(){
-    document.querySelector(".popup").style.display = "none";
+document.getElementById('popupId').addEventListener('click', function(){
+    document.querySelector('.popup').style.display = 'none';
 }); 
 
 class Burger {
@@ -112,27 +112,101 @@ class Slider {
 }
 const sliderFirst = new Slider('.slider');
 
-class Settings {
-    constructor(formClass, nameClass, numberClass, inputClass) {
-        this.formElem = document.querySelector(formClass);
-        this.NameElem = this.formElem.querySelector(nameClass);
-        this.NumberElem = this.formElem.querySelector(numberClass);
-        this.selectorElem = this.formElem.querySelector(inputClass);
+/*--------------Form Validation------------*/
 
-        this.formElem.addEventListener('submit', this.submit.bind(this));
-    }
+      let formElem = document.querySelector('.fieldset');
+
+      let NameElem = formElem.querySelector('.name');
+      let firstNameError = document.getElementById('first-name-error');
+      let emptyFirstNameError = document.getElementById('empty-first-name');
+
+      let NumberElem = formElem.querySelector('.number');
+      let phoneError = document.getElementById('phone-error');
+      let emptyPhoneError = document.getElementById('empty-phone');
+
+      let selectorElem = formElem.querySelector('.input_select');
+      let submitButton = formElem.querySelector('.button_submit');
+      let popupForm = document.querySelector('.popup__form')
+      let PopupTextInForm = document.querySelector('.popup__text__form');
+            
+      
+      const textVerify = (text) => {
+        const regex = /^[A-ZА-Я][a-zа-я]{2,}$/;
+        return regex.test(text);
+      };
+      
+      const phoneVerify = (number) => {
+        const regex = /^([\d]){3}[0-9]{7}$/;
+        return regex.test(number);
+      };
+      
+      const emptyUpdate = (
+        inputReference,
+        emptyErrorReference,
+        otherErrorReference
+      ) => {
+        if (!inputReference.value) {
+          emptyErrorReference.classList.remove('hide');
+          otherErrorReference.classList.add('hide');
+          inputReference.classList.add('error');
+        } else {
+          emptyErrorReference.classList.add('hide');
+        }
+      };
+      
+      const errorUpdate = (inputReference, errorReference) => {
+        errorReference.classList.remove('hide');
+        inputReference.classList.remove('valid');
+        inputReference.classList.add('error');
+      };
+      
+      const validInput = (inputReference) => {
+        inputReference.classList.remove('error');
+        inputReference.classList.add('valid');
+      };
+      
+      NameElem.addEventListener('input', () => {
+        if (textVerify(NameElem.value)) {
+          //If verification returns true
+          firstNameError.classList.add('hide');
+          validInput(NameElem);
+        } else {
+          //for false
+          errorUpdate(NameElem, firstNameError);
+          //empty checker
+          emptyUpdate(NameElem, emptyFirstNameError, firstNameError);
+        }
+      });
     
+      NumberElem.addEventListener('input', () => {
+        if (phoneVerify(NumberElem.value)) {
+          phoneError.classList.add('hide');
+          validInput(NumberElem);
+        } else {
+          errorUpdate(NumberElem, phoneError);
+          emptyUpdate(NumberElem, emptyPhoneError, phoneError);
+        }
+      });
+    
+      submitButton.addEventListener('submit', function(event){
+        PopupTextInForm.innerHTML = `${NameElem.value}, спасибо, что записались на дегустацию в наш магазин на ${selectorElem.value}.
+        Наш менеджер свяжется с вами в течении 10 минут`;
+        popupForm.style.display = "block";
+      });
+    
+    
+    document.getElementById("close__form").addEventListener("click", function(){
+      popupForm.style.display = "none";
+    }); 
+    
+    document.getElementById("popupId__form").addEventListener("click", function(){
+      popupForm.style.display = "none";
+    }); 
+      
+   
 
-    submit(e) {
-        e.preventDefault();
 
-        console.log(this.selectorElem.value);
-        alert(`${this.NameElem.value}, спасибо, что записались на дегустацию в наш магазин на ${this.selectorElem.value}.
-         Наш менеджер свяжется с вами в течении 10 минут`);
-    }
-} 
 
-let myForm = new Settings ('.fieldset', '.name', '.number', '.input_select');
 
 
 

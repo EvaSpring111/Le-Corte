@@ -29,7 +29,7 @@
         href="https://okwine.ua/market/vinomarket-okwine-na-ul-kalnyshevskogo-6">ул. П. Калныша, 6</a>
         <a 
         aria-label="8 (812) 123-45-67"
-        href="tel:8 (812) 123-45-67"> 123-45-67</a>
+        href="tel:8 (812) 123-45-67">8 (812) 123-45-67</a>
     </address>
 
     <!--Header_Nav-->
@@ -211,12 +211,21 @@
           temporibus ullam eveniet?
         </p>
 
-        <form class="userName_shops" 
-          action="php">
+        <form class="userName_shops">
 
           <div class="userName_Number">
             <input class="input_color name" type="name" placeholder="Имя" required min="4" max="30" name="userName">
-            <input class="input_color number" type="number" placeholder="Телефон" required name="userMob">
+            <span id="first-name-error" class="hide required-color error-message"
+            >Invalid Input</span>
+            <span id="empty-first-name" class="hide required-color error-message"
+            >First Name Cannot Be Empty</span>
+
+            <input class="input_color number" type="number" placeholder="(0XX)XXXXXXX)" required name="userMob">
+            <span id="phone-error" class="hide required-color error-message"
+            >Phone Number Should Have 10 Digits</span>
+            <span id="empty-phone" class="hide required-color error-message">
+            Phone cannot be empty
+            </span>
           </div>  
 
           <select name="Shops`_addresses" id="Shops`_addresses" class="input_color input_select">
@@ -325,6 +334,12 @@
     </p>
     <a id="popupId" href="#">Хорошо!</a>
   </div>
-  <script src="LeCorteJS.js" defer></script>   
+  <div class="popup__form">
+    <button id="close__form">&times;</button>
+    <p class="popup__text__form">
+    </p>
+    <a id="popupId__form" href="#">Хорошо!</a>
+  </div>
+  <script src="LeCorteJS.js" defer></script>  
 </body>
 </html>
