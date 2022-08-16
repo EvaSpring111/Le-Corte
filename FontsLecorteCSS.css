@@ -134,7 +134,8 @@
 }
 
 .new-collections span,
-.popup__text {
+.popup__text,
+.popup__text__form {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1rem;

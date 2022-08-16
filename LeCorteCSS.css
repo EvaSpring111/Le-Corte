@@ -367,6 +367,9 @@ fieldset {
 .bochka_right {
   position: absolute;
 }
+.userName_shops {
+  position: relative;
+}
 
 .fieldset_title {
   text-align: center;
@@ -597,14 +600,20 @@ fieldset {
   width: 30vw;
   max-width: 450px;
   padding: 30px 40px;
-  position: absolute;
   transform: translate(-50%,-50%);
   left: 50%;
-  top: 50%;
+  position: absolute;
   border-radius: 8px;
   display: none;
   text-align: center;
   z-index: 99999;
+}
+.popup {
+  top: 50%;
+}
+
+.popup__form {
+  bottom: 0%;
 }
 .popup h2 {
   margin-top: 10px;

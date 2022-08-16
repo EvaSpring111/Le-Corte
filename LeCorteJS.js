@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+ window.addEventListener('load', function(){
     setTimeout(
         function open(event){
             document.querySelector('.popup').style.display = 'block';
@@ -15,6 +15,8 @@ document.getElementById('close').addEventListener('click', function(){
 document.getElementById('popupId').addEventListener('click', function(){
     document.querySelector('.popup').style.display = 'none';
 }); 
+
+/*----------------------Burger BTN-----------*/
 
 class Burger {
 
@@ -42,6 +44,7 @@ class Burger {
         });
     }
 }
+
 const headerNavBurger = new Burger({
     burgerSelector: '.header__burger',
     linksSelector: '.header-nav', 
@@ -63,6 +66,8 @@ const footerSecondBurger = new Burger ({
     burgerTogglerClass: 'footer__burger--open',
 });
 
+
+/*-----------------------Slider block-------------*/
 
 class Slider {
     constructor(selector){
@@ -111,6 +116,7 @@ class Slider {
     }
 }
 const sliderFirst = new Slider('.slider');
+
 
 /*--------------Form Validation------------*/
 
@@ -188,9 +194,10 @@ const sliderFirst = new Slider('.slider');
         }
       });
     
-      submitButton.addEventListener('submit', function(event){
+      submitButton.addEventListener('click', function(e){
+        e.preventDefault();
         PopupTextInForm.innerHTML = `${NameElem.value}, спасибо, что записались на дегустацию в наш магазин на ${selectorElem.value}.
-        Наш менеджер свяжется с вами в течении 10 минут`;
+                                      Наш менеджер свяжется с вами в течении 10 минут`;
         popupForm.style.display = "block";
       });
     
