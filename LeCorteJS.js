@@ -17,32 +17,31 @@ document.getElementById('popupId').addEventListener('click', function(){
 }); 
 
 /*----------------------Burger BTN-----------*/
-
 class Burger {
 
-    constructor({ burgerSelector, linksSelector, linksTogglerClass, burgerTogglerClass }){
-            
-        this.burgerElem = document.querySelector(burgerSelector);
-        this.linksElem = document.querySelector(linksSelector);
+  constructor({ burgerSelector, linksSelector, linksTogglerClass, burgerTogglerClass }){
+          
+      this.burgerElem = document.querySelector(burgerSelector);
+      this.linksElem = document.querySelector(linksSelector);
 
-        const toggleMenu = () => {
-            this.linksElem.classList.toggle(linksTogglerClass);
-            this.burgerElem.classList.toggle(burgerTogglerClass);
-        };
+      const toggleMenu = () => {
+          this.linksElem.classList.toggle(linksTogglerClass);
+          this.burgerElem.classList.toggle(burgerTogglerClass);
+      };
 
-        this.burgerElem.addEventListener('click', toggleMenu);
+      this.burgerElem.addEventListener('click', toggleMenu);
 
-        window.addEventListener('click', (e) => {
-            if(this.linksElem.classList.contains(linksTogglerClass)){
-                const linksElem = e.target.closest(linksSelector);
-                const burger = e.target.closest(burgerSelector);
+      window.addEventListener('click', (e) => {
+          if(this.linksElem.classList.contains(linksTogglerClass)){
+              const linksElem = e.target.closest(linksSelector);
+              const burger = e.target.closest(burgerSelector);
 
-                if(!linksElem && !burger) {
-                    toggleMenu();
-                }
-            }
-        });
-    }
+              if(!linksElem && !burger) {
+                  toggleMenu();
+              }
+          }
+      });
+  }
 }
 
 const headerNavBurger = new Burger({
@@ -70,12 +69,13 @@ const footerSecondBurger = new Burger ({
 /*-----------------------Slider block-------------*/
 
 class Slider {
-    constructor(selector){
+    constructor(
+      selector, slider__slide, slider__prev, slider__next){
         this.selector = selector;
         this.rootElem = document.querySelector(selector);
-        this.slides = Array.from( this.rootElem.querySelectorAll('.slider__slide') );
-        this.prevSlideBtn = this.rootElem.querySelector('.slider__prev');
-        this.nextSlideBtn = this.rootElem.querySelector('.slider__next');
+        this.slides = Array.from( this.rootElem.querySelectorAll(slider__slide) );
+        this.prevSlideBtn = this.rootElem.querySelector(slider__prev);
+        this.nextSlideBtn = this.rootElem.querySelector(slider__next);
         this.slideIndex = this.slides.findIndex(function (slide) {
             return slide.classList.contains('slider__current');
         });
@@ -115,116 +115,128 @@ class Slider {
          this.showSlide(this.slideIndex + 1);
     }
 }
-const sliderFirst = new Slider('.slider');
+const sliderFirst = new Slider('.slider', '.slider__slide', '.slider__prev', '.slider__next');
 
+/*-------------Cards spin------------*/
+
+class Cards {
+  constructor(cardElem ) {
+    this.cardElem = document.querySelector(cardElem);
+   /* this.newCard = document.getElementById('newCard');*/
+    this.cardElem.addEventListener('mouseover', (e) => {
+      this.cardElem.classList.add('active');
+    })
+  }
+}
+
+let firstCard = new Cards('.img_Harvest-1')
 
 /*--------------Form Validation------------*/
 
-      let formElem = document.querySelector('.fieldset');
+let formElem = document.querySelector('.fieldset');
 
-      let NameElem = formElem.querySelector('.name');
-      let firstNameError = document.getElementById('first-name-error');
-      let emptyFirstNameError = document.getElementById('empty-first-name');
+let NameElem = formElem.querySelector('.name');
+let firstNameError = document.getElementById('first-name-error');
+let emptyFirstNameError = document.getElementById('empty-first-name');
 
-      let NumberElem = formElem.querySelector('.number');
-      let phoneError = document.getElementById('phone-error');
-      let emptyPhoneError = document.getElementById('empty-phone');
+let NumberElem = formElem.querySelector('.number');
+let phoneError = document.getElementById('phone-error');
+let emptyPhoneError = document.getElementById('empty-phone');
 
-      let selectorElem = formElem.querySelector('.input_select');
-      let submitButton = formElem.querySelector('.button_submit');
-      let popupForm = document.querySelector('.popup__form')
-      let PopupTextInForm = document.querySelector('.popup__text__form');
-            
+let selectorElem = formElem.querySelector('.input_select');
+let submitButton = formElem.querySelector('.button_submit');
+let popupForm = document.querySelector('.popup__form')
+let PopupTextInForm = document.querySelector('.popup__text__form');
       
-      const textVerify = (text) => {
-        const regex = /^[A-ZА-Я][a-zа-я]{2,}$/;
-        return regex.test(text);
-      };
-      
-      const phoneVerify = (number) => {
-        const regex = /^([\d]){3}[0-9]{7}$/;
-        return regex.test(number);
-      };
-      
-      const emptyUpdate = (
-        inputReference,
-        emptyErrorReference,
-        otherErrorReference
-      ) => {
-        if (!inputReference.value) {
-          emptyErrorReference.classList.remove('hide');
-          otherErrorReference.classList.add('hide');
-          inputReference.classList.add('error');
-        } else {
-          emptyErrorReference.classList.add('hide');
-        }
-      };
-      
-      const errorUpdate = (inputReference, errorReference) => {
-        errorReference.classList.remove('hide');
-        inputReference.classList.remove('valid');
-        inputReference.classList.add('error');
-      };
-      
-      const validInput = (inputReference) => {
-        inputReference.classList.remove('error');
-        inputReference.classList.add('valid');
-      };
-      
-      NameElem.addEventListener('input', () => {
-        if (textVerify(NameElem.value)) {
-          //If verification returns true
-          firstNameError.classList.add('hide');
-          validInput(NameElem);
-        } else {
-          //for false
-          errorUpdate(NameElem, firstNameError);
-          //empty checker
-          emptyUpdate(NameElem, emptyFirstNameError, firstNameError);
-        }
-      });
-    
-      NumberElem.addEventListener('input', () => {
-        if (phoneVerify(NumberElem.value)) {
-          phoneError.classList.add('hide');
-          validInput(NumberElem);
-        } else {
-          errorUpdate(NumberElem, phoneError);
-          emptyUpdate(NumberElem, emptyPhoneError, phoneError);
-        }
-      });
-    
-      submitButton.addEventListener('click', function(e){
-        e.preventDefault();
-        PopupTextInForm.innerHTML = `${NameElem.value}, спасибо, что записались на дегустацию в наш магазин на ${selectorElem.value}.
-                                      Наш менеджер свяжется с вами в течении 10 минут`;
-        popupForm.style.display = "block";
-      });
-    
-    
-    document.getElementById("close__form").addEventListener("click", function(){
-      popupForm.style.display = "none";
-    }); 
-    
-    document.getElementById("popupId__form").addEventListener("click", function(){
-      popupForm.style.display = "none";
-    }); 
-      
-   
+
+const textVerify = (text) => {
+  const regex = /^[A-ZА-Я][a-zа-я]{2,}$/;
+  return regex.test(text);      
+};
+
+const phoneVerify = (number) => {
+  const regex = /^([\d]){3}[0-9]{7}$/;
+  return regex.test(number);
+};
+
+const emptyUpdate = (
+  inputReference,
+  emptyErrorReference,
+  otherErrorReference
+) => {
+  if (!inputReference.value) {
+    emptyErrorReference.classList.remove('hide');
+    otherErrorReference.classList.add('hide');
+    inputReference.classList.add('error');
+  } else {
+    emptyErrorReference.classList.add('hide');
+  }
+};
+
+const errorUpdate = (inputReference, errorReference) => {
+  errorReference.classList.remove('hide');
+  inputReference.classList.remove('valid');
+  inputReference.classList.add('error');
+};
+
+const validInput = (inputReference) => {
+  inputReference.classList.remove('error');
+  inputReference.classList.add('valid');
+};
+
+NameElem.addEventListener('input', () => {
+  if (textVerify(NameElem.value)) {
+    //If verification returns true
+    firstNameError.classList.add('hide');
+    validInput(NameElem);
+  } else {
+    //for false
+    errorUpdate(NameElem, firstNameError);
+    //empty checker
+    emptyUpdate(NameElem, emptyFirstNameError, firstNameError);
+  }
+});
+
+NumberElem.addEventListener('input', () => {
+  if (phoneVerify(NumberElem.value)) {
+    phoneError.classList.add('hide');
+    validInput(NumberElem);
+  } else {
+    errorUpdate(NumberElem, phoneError);
+    emptyUpdate(NumberElem, emptyPhoneError, phoneError);
+  }
+});
+  
+submitButton.addEventListener('click', function(e){
+  e.preventDefault();
+  if(!NameElem.value && !NumberElem.value){
+    PopupTextInForm.innerHTML =    `Dear Visitor!\n
+                            Please enter your name and number!
+                                      Thanks!`;
+    popupForm.style.display = "block"; 
+  }else if(!NumberElem.value){
+    PopupTextInForm.innerHTML = `Dear Visitor!n
+                            Please enter your number!
+                                    Thanks!`;
+    popupForm.style.display = "block";
+  }else if(!NameElem.value){
+    PopupTextInForm.innerHTML = `Dear Visitor!
+                          Please enter your name!
+                                  Thanks!`;
+    popupForm.style.display = "block";
+  } else if (textVerify && phoneVerify){
+    PopupTextInForm.innerHTML = `${NameElem.value}, thank you for signing up for a tasting
+                                    at our store in the ${selectorElem.value} district.
+                                        Our manager will contact you within 10 minutes`;
+    popupForm.style.display = "block";
+  }  
+});
 
 
+document.getElementById("close__form").addEventListener("click", function(){
+popupForm.style.display = "none";
+}); 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById("popupId__form").addEventListener("click", function(){
+popupForm.style.display = "none";
+}); 

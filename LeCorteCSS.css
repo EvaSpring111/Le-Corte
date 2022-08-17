@@ -97,6 +97,7 @@ body {
   background-color: maroon;
 
   z-index: 2;
+  border-radius: 50%;
 
   transform: translateY (-50%);
 }
@@ -161,6 +162,10 @@ body {
   text-decoration: none;
 }
 
+main {
+  position: relative;
+}
+
 /*--------------Section Best Taste-------*/
 
 .section-best-taste{
@@ -195,6 +200,7 @@ body {
 
 .best-taste > p {
   object-fit: fill;
+  padding: 0 15%
 }
 
 .best-taste > h2,
@@ -645,6 +651,22 @@ fieldset {
   color: #ffffff;
   text-decoration: none;
   padding: 5px 10px;
+}
+.active {
+  animation: bshit 3s linear;
+}
+
+@keyframes bshit {
+  from {
+    transform: rotateY(0);
+    background-image: url(img/Harvest-1.jpg);
+  }
+  50% {
+    background-image: url(img/bgc.png);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 /*--------@media------------*/
