@@ -183,7 +183,7 @@
 
 <!--Form Section-->
   <section class="fieldset" id="fieldset">
-    <form  class ='form'>
+   
       <fieldset>
         <legend class="fieldset_title">Free Degustation</legend>
         <img class="grape_left"  
@@ -214,15 +214,15 @@
         <form class="userName_shops">
 
           <div class="userName_Number">
-            <input class="input_color name" type="name" placeholder="Name" required min="4" max="30" name="userName">
+            <input class="input_color name" type="name" placeholder="Name"  min="4" max="30" name="userName">
             <span id="first-name-error" class="hide required-color error-message"
-            >Invalid Input</span>
+            >Start with a capital letter</span>
             <span id="empty-first-name" class="hide required-color error-message"
             >First Name Cannot Be Empty</span>
 
-            <input class="input_color number" type="number" placeholder="(0XX)XXXXXXX)" required name="userMob">
+            <input class="input_color number" type="number" placeholder="(0XX)XXXXXXX)" name="userMob">
             <span id="phone-error" class="hide required-color error-message"
-            >Phone Number Should Have 10 Digits</span>
+            >Phone Number Should Have 10 Digits and start from 0</span>
             <span id="empty-phone" class="hide required-color error-message">
             Phone cannot be empty
             </span>
@@ -236,10 +236,10 @@
             <option value="Desnianskyi">Desnianskyi</option>
           </select>
 
-          <button name="submit_button" class="btn button_submit" type="submit">Submit!</button>
+          <button name="submit_button" class="btn button_submit" type="submit">Submit
+          </button>
         </form> 
       </fieldset>
-    </form>
   </section>
   <div class="popup__form">
     <button id="close__form">&times;</button>
@@ -333,11 +333,16 @@
   </footer>
 
   <div class="popup">
-    <button id="close">&times;</button>
     <h2>Dear visitor!</h2>
     <p class="popup__text">
-      Excessive alcohol consumption is harmful to your health!    </p>
-    <a id="popupId" href="#">Ok!</a>
+      This page is intended for persons over 18 years of age. <br>
+      Are you over 18?    
+    </p>
+    <div class="btn_container">
+      <a id="popupId" href="#">Yes</a>
+      <a id="popNo" href="https://en.wikipedia.org/wiki/Alcohol">No :(</a>
+    </div>
+    
   </div>
   
 

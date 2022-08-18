@@ -7,13 +7,11 @@
     )
 });
 
-
-document.getElementById('close').addEventListener('click', function(){
-    document.querySelector('.popup').style.display = 'none';
-}); 
-
 document.getElementById('popupId').addEventListener('click', function(){
     document.querySelector('.popup').style.display = 'none';
+}); 
+document.getElementById("popupId").addEventListener("click", function(){
+  popupForm.style.display = "none";
 }); 
 
 /*----------------------Burger BTN-----------*/
@@ -133,7 +131,7 @@ let firstCard = new Cards('.img_Harvest-1')
 
 /*--------------Form Validation------------*/
 
-let formElem = document.querySelector('.fieldset');
+let formElem = document.querySelector('.userName_shops');
 
 let NameElem = formElem.querySelector('.name');
 let firstNameError = document.getElementById('first-name-error');
@@ -155,7 +153,7 @@ const textVerify = (text) => {
 };
 
 const phoneVerify = (number) => {
-  const regex = /^([\d]){3}[0-9]{7}$/;
+  const regex = /^0([\d]){2}[0-9]{7}$/;
   return regex.test(number);
 };
 
@@ -207,10 +205,19 @@ NumberElem.addEventListener('input', () => {
   }
 });
   
-submitButton.addEventListener('click', function(e){
+formElem.onsubmit = async (e) => {
   e.preventDefault();
+
+  let response = await fetch('https://62e271cf3891dd9ba8e865f4.mockapi.io/Su', {
+    method: 'POST',
+    body: new FormData(formElem)
+  });
+
+  let result = await response.json();
+  console.log(result.message);
+
   if(!NameElem.value && !NumberElem.value){
-    PopupTextInForm.innerHTML =    `Dear Visitor!\n
+    PopupTextInForm.innerHTML =    `Dear Visitor!
                             Please enter your name and number!
                                       Thanks!`;
     popupForm.style.display = "block"; 
@@ -230,8 +237,13 @@ submitButton.addEventListener('click', function(e){
                                         Our manager will contact you within 10 minutes`;
     popupForm.style.display = "block";
   }  
-});
-
+  function cleanForm() {
+    NameElem.value = '';
+    NumberElem.value = '';
+  }
+  cleanForm();
+  
+};
 
 document.getElementById("close__form").addEventListener("click", function(){
 popupForm.style.display = "none";
@@ -240,3 +252,4 @@ popupForm.style.display = "none";
 document.getElementById("popupId__form").addEventListener("click", function(){
 popupForm.style.display = "none";
 }); 
+
