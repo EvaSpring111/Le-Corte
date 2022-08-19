@@ -709,6 +709,9 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
   }
+  .popup__form {
+    width: 60vw;;
+  }
 }
 
 @media (max-width : 600px) {
