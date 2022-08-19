@@ -131,9 +131,11 @@ let firstCard = new Cards('.img_Harvest-1')
 
 /*--------------Form Validation------------*/
 
-let formElem = document.querySelector('.userName_shops');
+let formElem = document.querySelector('.userNameShops');
+let formData = {};
+const LS = localStorage;
 
-let NameElem = formElem.querySelector('.name');
+let NameElem = formElem.querySelector('.visitoName');
 let firstNameError = document.getElementById('first-name-error');
 let emptyFirstNameError = document.getElementById('empty-first-name');
 
@@ -182,20 +184,18 @@ const validInput = (inputReference) => {
   inputReference.classList.add('valid');
 };
 
-NameElem.addEventListener('input', () => {
+NameElem.addEventListener('input', (e) => {
   if (textVerify(NameElem.value)) {
     //If verification returns true
     firstNameError.classList.add('hide');
     validInput(NameElem);
   } else {
-    //for false
     errorUpdate(NameElem, firstNameError);
-    //empty checker
     emptyUpdate(NameElem, emptyFirstNameError, firstNameError);
   }
 });
 
-NumberElem.addEventListener('input', () => {
+NumberElem.addEventListener('input', (e) => {
   if (phoneVerify(NumberElem.value)) {
     phoneError.classList.add('hide');
     validInput(NumberElem);
@@ -204,17 +204,36 @@ NumberElem.addEventListener('input', () => {
     emptyUpdate(NumberElem, emptyPhoneError, phoneError);
   }
 });
+
+formElem.addEventListener('input', function(e) {
+  formData[e.target.name] = e.target.value;
+  LS.setItem('formData', JSON.stringify(formData));
+});
+
+if(LS.getItem('formData')){
+  formData = JSON.parse(LS.getItem('formData'));
+  for(let key in formData){
+    formElem.elements[key].value = formData[key];
+  }
+}
   
 formElem.onsubmit = async (e) => {
   e.preventDefault();
 
-  let response = await fetch('https://62e271cf3891dd9ba8e865f4.mockapi.io/Su', {
-    method: 'POST',
-    body: new FormData(formElem)
-  });
+  try { 
+    const response = await fetch('https://62e271cf3891dd9ba8e865f4.mockapi.io/Su', {
+      method: 'POST',
+      body: JSON.stringify( formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-  let result = await response.json();
-  console.log(result.message);
+    const json = await response.json();
+    console.log( 'Succses: ', JSON.stringify(json) );
+  } catch (error){
+    console.log('Error: ', error);
+  }
 
   if(!NameElem.value && !NumberElem.value){
     PopupTextInForm.innerHTML =    `Dear Visitor!
@@ -237,12 +256,12 @@ formElem.onsubmit = async (e) => {
                                         Our manager will contact you within 10 minutes`;
     popupForm.style.display = "block";
   }  
+
   function cleanForm() {
     NameElem.value = '';
     NumberElem.value = '';
   }
   cleanForm();
-  
 };
 
 document.getElementById("close__form").addEventListener("click", function(){
