@@ -155,7 +155,7 @@ const textVerify = (text) => {
 };
 
 const phoneVerify = (number) => {
-  const regex = /^0([\d]){2}[0-9]{7}$/;
+  const regex = /^\(?(0[1-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
   return regex.test(number);
 };
 
@@ -230,9 +230,18 @@ formElem.onsubmit = async (e) => {
     });
 
     const json = await response.json();
-    console.log( 'Succses: ', JSON.stringify(json) );
+
+    
+    if(!NameElem.value && !NumberElem.value){
+      throw new SyntaxError("No phone number and UserName"); 
+    } else if ( !NameElem.value){
+      throw new SyntaxError("No UserName"); 
+    } else if ( !NumberElem.value){
+      throw new SyntaxError("No phone number"); 
+    }
+     console.log( 'Succses: ', JSON.stringify(json) );
   } catch (error){
-    console.log('Error: ', error);
+    console.log('Error: ', error.message);
   }
 
   if(!NameElem.value && !NumberElem.value){
@@ -253,7 +262,7 @@ formElem.onsubmit = async (e) => {
   } else if (textVerify && phoneVerify){
     PopupTextInForm.innerHTML = `${NameElem.value}, thank you for signing up for a tasting
                                     at our store in the ${selectorElem.value} district.
-                                        Our manager will contact you within 10 minutes`;
+                                        Our manager will contact you within 10 minutes!`;
     popupForm.style.display = "block";
   }  
 
