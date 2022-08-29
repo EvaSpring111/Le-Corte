@@ -626,6 +626,7 @@ fieldset {
 }
 .popup {
   top: 50%;
+  position: fixed;
 }
 
 .popup__form {
